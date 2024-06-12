@@ -6,7 +6,7 @@ import { runBot } from './bot/main.js';
 (async () => {
   try {
     dotenv.config();
-    await initializeBot();
+    initializeBot();
     listenBot(BOT);
     runBot(BOT);
   } catch (error) {
