@@ -1,13 +1,12 @@
 const mainText = `
-Вас приветствует демо бот
+Новинки в кинотеатрах
 `;
 
-const payKeyboard = [
-  [{ text: 'Далее', callback_data: '_pay'}],
-  [{ text: 'Отмена', callback_data: '_cancel'}]
+const backKeyboard = [
+  [{ text: 'К выбору жанров', callback_data: '_back'}]
 ];
 
 export const Messages = {
   mainText,
-  payKeyboard,
+  backKeyboard
 };

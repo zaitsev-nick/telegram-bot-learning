@@ -8,7 +8,7 @@ let BOT;
 // Closure
 const setBot = (b) => (BOT = b);
 
-const initializeBot = async () => {
+const initializeBot = () => {
   try {
     const token = process.env.TOKEN;
     let bot;
@@ -31,11 +31,11 @@ const initializeBot = async () => {
           },
         },
       });
-      await bot.setWebHook(process.env.HEROKU_URL + bot.token);
+      bot.setWebHook(process.env.HEROKU_URL + bot.token);
     } else {
       bot = new Tgfancy(token, { polling: true });
     }
-    await bot.on('webhook_error', (error) => {
+    bot.on('webhook_error', (error) => {
       console.log(error.code); // => 'EPARSE'
     });
     console.log('** Server started in the ' + process.env.NODE_ENV + ' mode');
